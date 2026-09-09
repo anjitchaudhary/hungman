@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b2d57">
+<title>HUNGMAN - Class 12 NEB MCQ Learning Game</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="brand-button" id="homeButton" aria-label="Go to home">HUNGMAN</button>
+  <div class="top-actions">
+    <button class="small-button home-nav-button" id="globalHomeButton">← Home</button>
+    <button class="small-button" id="statsButton">Statistics</button>
+    <button class="small-button" id="howButton">How to Play</button>
+    <button class="small-button" id="aboutButton">About</button>
+    <button class="small-button reset-top-button" id="resetButton">Reset Progress</button>
+  </div>
+</header>
+
+<main>
+  <section id="homeView" class="view active">
+    <div class="hero">
+      <div>
+        <p class="eyebrow">CLASS 12 NEB</p>
+        <h1>HUNGMAN</h1>
+        <p>MCQ Learning Game</p>
+        <p class="hero-copy">Answer carefully. Correct answers move the player one step up. Wrong answers move him one step down.</p>
+      </div>
+      <div class="hero-rule">
+        <span>10</span>
+        <small>starting lives</small>
+      </div>
+    </div>
+    <div class="section-heading">
+      <h2>Choose a subject</h2>
+      <p>Every subject has a large offline practice bank.</p>
+    </div>
+    <div id="subjectGrid" class="subject-grid"></div>
+  </section>
+
+  <section id="gameView" class="view">
+    <div class="game-header">
+      <div>
+        <p class="eyebrow" id="gameSubject"></p>
+        <h2 id="gameTitle">Question</h2>
+      </div>
+      <button class="small-button" id="quitGameButton">← Home</button>
+    </div>
+    <div class="game-layout">
+      <section class="question-panel">
+        <div class="dashboard">
+          <div><span>Question</span><strong id="questionCounter">1 / 50</strong></div>
+          <div><span>Correct</span><strong id="correctCounter">0</strong></div>
+          <div><span>Wrong</span><strong id="wrongCounter">0</strong></div>
+          <div><span>Accuracy</span><strong id="accuracyCounter">0%</strong></div>
+          <div><span>Lives</span><strong id="livesCounter">10 / 10</strong></div>
+          <div><span>Streak</span><strong id="streakCounter">0</strong></div>
+        </div>
+        <div class="progress-track"><div id="questionProgress" class="progress-fill"></div></div>
+        <article class="question-card">
+          <div class="topic-line" id="questionTopic"></div>
+          <h3 id="questionText"></h3>
+          <div id="options" class="options"></div>
+          <div id="feedback" class="feedback" aria-live="polite"></div>
+          <div class="question-actions">
+            <button class="outline-button" id="previousButton">Previous</button>
+            <button class="primary-button" id="nextButton" disabled>Next</button>
+          </div>
+        </article>
+      </section>
+
+      <aside class="hanging-panel">
+        <div class="hanging-header">
+          <div>
+            <p class="eyebrow">SURVIVAL</p>
+            <h2>Stay above the river</h2>
+          </div>
+          <div class="life-badge" id="lifeBadge">10 / 10</div>
+        </div>
+        <div id="hangingScene" class="hanging-scene">
+          <div class="sky"></div>
+          <div class="mountains mountain-one"></div>
+          <div class="mountains mountain-two"></div>
+          <div class="tree tree-one"></div>
+          <div class="tree tree-two"></div>
+          <div class="bank bank-left"></div>
+          <div class="bank bank-right"></div>
+          <div class="river"><span class="wave wave-one"></span><span class="wave wave-two"></span></div>
+          <div class="wood-post"></div>
+          <div class="wood-beam"></div>
+          <div class="wood-brace"></div>
+          <div id="rope" class="rope"></div>
+          <div id="hanger" class="hanger" aria-label="Hanging player">
+            <div class="head"></div>
+            <div class="body"></div>
+            <div class="arm arm-left"></div>
+            <div class="arm arm-right"></div>
+            <div class="leg leg-left"></div>
+            <div class="leg leg-right"></div>
+            <div class="shoe shoe-left"></div>
+            <div class="shoe shoe-right"></div>
+          </div>
+          <div id="splash" class="splash"></div>
+        </div>
+        <div class="position-note" id="positionNote">Top position</div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="resultView" class="view">
+    <div class="result-card">
+      <p class="eyebrow" id="resultEyebrow">SESSION COMPLETE</p>
+      <h2 id="resultTitle">SESSION COMPLETE</h2>
+      <p id="resultMessage"></p>
+      <div id="resultStats" class="result-stats"></div>
+      <div class="result-actions">
+        <button class="primary-button" id="reviewButton">Review Questions</button>
+        <button class="outline-button" id="playAgainButton">Play Again</button>
+        <button class="outline-button" id="chooseSubjectButton">Choose Subject</button>
+        <button class="outline-button" id="resultStatsButton">Statistics</button>
+        <button class="outline-button" id="resultHomeButton">Home</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviewView" class="view">
+    <div class="game-header">
+      <div>
+        <p class="eyebrow">REVIEW</p>
+        <h2 id="reviewCounter">Question 1</h2>
+      </div>
+      <button class="small-button" id="backResultsButton">← Back to Results</button>
+    </div>
+    <article class="review-card">
+      <div class="topic-line" id="reviewTopic"></div>
+      <h3 id="reviewQuestion"></h3>
+      <div id="reviewOptions" class="review-options"></div>
+      <div id="reviewExplanation" class="review-explanation"></div>
+      <div class="question-actions">
+        <button class="outline-button" id="reviewPreviousButton">Previous</button>
+        <button class="primary-button" id="reviewNextButton">Next</button>
+      </div>
+    </article>
+  </section>
+
+  <section id="statsView" class="view">
+    <div class="page-heading">
+      <div><p class="eyebrow">PROGRESS</p><h2>Statistics</h2></div>
+      <button class="small-button" id="statsHomeButton">Home</button>
+    </div>
+    <div id="overallStats" class="overall-stats"></div>
+    <div class="section-heading"><h2>By subject</h2></div>
+    <div id="subjectStats" class="stats-grid"></div>
+    <button class="danger-button" id="statsResetButton">Reset All Statistics</button>
+  </section>
+
+  <section id="infoView" class="view">
+    <div class="page-heading">
+      <div><p class="eyebrow" id="infoEyebrow">GUIDE</p><h2 id="infoTitle">How to Play</h2></div>
+      <button class="small-button" id="infoHomeButton">Home</button>
+    </div>
+    <article id="infoContent" class="info-card"></article>
+  </section>
+</main>
+
+<div id="toast" class="toast" role="status"></div>
+
+<script src="data/english.js"></script>
+<script src="data/nepali.js"></script>
+<script src="data/social.js"></script>
+<script src="data/life-skill.js"></script>
+<script src="data/accountancy.js"></script>
+<script src="data/economics.js"></script>
+<script src="data/business-studies.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/questions.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/game.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+@media (max-width: 1050px) {
+  .subject-grid { grid-template-columns: repeat(2, 1fr); }
+  .game-layout { grid-template-columns: 1fr; }
+  .hanging-panel { max-width: 720px; width: 100%; margin: 0 auto; }
+}
+@media (max-width: 700px) {
+  .topbar { align-items: flex-start; }
+  .top-actions { justify-content: flex-end; }
+  main { width: min(94vw, 620px); padding-top: 18px; }
+  .hero { padding: 25px; min-height: 0; align-items: flex-start; }
+  .hero-rule { display: none; }
+  .subject-grid { grid-template-columns: 1fr; }
+  .dashboard { grid-template-columns: repeat(3, 1fr); }
+  .hanging-scene { height: 430px; }
+  .overall-stats, .stats-grid { grid-template-columns: 1fr; }
+  .result-stats { grid-template-columns: repeat(2,1fr); }
+  .subject-stat-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 460px) {
+  .topbar { flex-direction: column; gap: 10px; }
+  .top-actions { width: 100%; justify-content: flex-start; }
+  .top-actions .small-button { flex: 1; padding: 8px 9px; font-size: .78rem; }
+  .hero h1 { font-size: 3.3rem; }
+  .hanging-scene { height: 390px; }
+  .wood-post { left: 9%; }
+  .wood-beam { left: 5%; width: 55%; }
+  .rope { left: calc(5% + 55% - 3px); }
+  .hanger { left: calc(5% + 55% - 38px); }
+  .result-card { padding: 24px 15px; }
+}
