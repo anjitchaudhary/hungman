@@ -76,7 +76,7 @@ function showInfo(type) {
       <h3>Question source</h3>
       <p>The included bank is generated board-style practice material based on common Class 12 learning concepts. It is not presented as official NEB past-question material.</p>
       <h3>Developer</h3>
-      <p>Developed by <strong>Alisha Chaudhary</strong>.</p>
+      <p>Developed by <strong>Anjit Chaudhary</strong>.</p>
       <h3>Data</h3>
       <p>Progress and statistics are stored in the browser on the device. Reset Progress permanently clears those local statistics and progress.</p>
     `;
